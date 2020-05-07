@@ -1,0 +1,110 @@
+<!--
+ *
+ *  Sample static file to load selected crossword
+ *  also includes workarounds to deal with keyboard issues in mobile devices
+ *  License: LGPL
+ * -----------------------------------
+ * Copyright 2020 Fernando Martinez
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * @license http://www.gnu.org/licenses/lgpl.html
+ *
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="oss crossword viewer in html5 canvas">
+  <meta name="author" content="Fernando">
+  <title>Open source html canvas crossword viewer</title>
+  <!-- Bootstrap Core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<section class="content-section bg-light" id="about">
+	<div class="container text-center">
+		<div class="row">
+			<div class="col-12">
+				<h2>Crossword viewer and interactive solver</h2>
+				<p class="lead mb-5">Using HTML Canvas and Javascript</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12 col-lg-4">
+				<div class="card" style="width: 18rem;">
+				  <div class="card-header">
+					Sample Crosswords
+				  </div>
+					<ul class="list-group">
+						<li class="list-group-item"><a href="cwvstatic.html?cw=celebrities">Celebrities</a></li>
+						<li class="list-group-item"><a href="cwvstatic.html?cw=countries">Countries</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-12 col-lg-8">
+				<div class="row">
+					<div class="col-12">
+						<div class="card text-justify" >
+							<div class="card-header">
+								Data format
+							</div>
+							<div class="card-body">
+								<h5 class="card-title">Custom xml format</h5>
+								<p class="card-text">The structure of the xml-based crossword data format is simple and self-descriptive.<br>
+								<span class="text-justify">
+									&lt;!-- start, specify here name,subject and dimensions--&gt;<br>
+									&lt;cw name=&quot;a name here&quot; subject=&quot;crossword subject&quot; cols=&quot;17&quot; rows=&quot;17&quot;&gt;
+									<br>
+									&lt;!-- section for horizontal words--&gt;<br>
+									&lt;horizontals&gt;  <br>
+									&lt;!-- sample horizontal word. Enter the word (value), and position (column 8, row 6)--&gt;<br>
+									&lt;!-- then enter the hint the end user will see--&gt;<br>
+									&lt;word value=&quot;edison&quot; xpos=&quot;8&quot; ypos=&quot;6&quot;&gt;  <br>Inventor of the light bulb, among many inventions (surname)  <br>&lt;/word&gt;<br>
+									&lt;-- your other horizontal words, then follow it with a similar section for your vertical words--&gt;<br>
+									...  <br>&lt;/horizontals&gt;<br>
+									&lt;!-- section for vertical words--&gt;<br>
+									&lt;verticals&gt;  <br>
+									&lt;!-- a vertical word in column 8 and row 6--&gt;<br>
+									&lt;word value=&quot;cruise&quot; xpos=&quot;8&quot; ypos=&quot;6&quot;&gt;  <br>European union (initials)<br>&lt;/word&gt;<br>...<br>&lt;/verticals&gt;<br>&lt;/cw&gt;<br>
+								</span>
+								<span>
+									<strong>To see a full example, you can take a look at the data for the celebrities sample on the left here: <a href="data/celebrities.xml">celebrities crossword data</a></strong>
+								</span>
+								<span>
+									<h4>Instead of manually creating a crossword following this specifications, you can use my interactive crossword making tool, which you can download here: <a href="maker/CwMaker.exe" target="_blank">CwMaker</a></h4>
+									(this is a Java app, which uses a list of words and hints, and automatically suggests positions for your words within the crossword)<br>
+									After download, check the integrity of the file:<br>
+									Checksum (SHA-256):B21ECC6C433EB90127DBE13A7ECB67AEC8F1FEB07E04BD23B86487AD373D1796
+								</span>
+								</p>
+						    </div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-10 mx-auto">
+						<a href="">source code</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+</body>
+</html>
