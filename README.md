@@ -1,2 +1,2 @@
-# cwhtml5
-HTML5 and Javascript Crossword viewer
+# Simple Crossword Viewer for web pages
+Created with HTML5 and Javascript
